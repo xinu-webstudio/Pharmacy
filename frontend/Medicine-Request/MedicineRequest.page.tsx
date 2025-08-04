@@ -1,12 +1,30 @@
 import { useNavigate } from "react-router-dom";
-import { Header, Status } from "./src/components";
-import { SampleTableData } from "./src/components/SampleData";
-import MasterTable from "./src/layouts/Table/MasterTable";
-import HeaderBar from "./page/Events/components/HeaderBar";
-import { FrontendRoutes } from "./src/routes";
+import Header from "../src/components/Header";
+import { Status } from "../src/components/Status";
+import MasterTable from "../src/layouts/Table/MasterTable";
+import { FrontendRoutes } from "../src/routes/FrontendRoutes";
 import { Icon } from "@iconify/react";
 
-const Prescriptions = () => {
+const SampleTableData = [
+  {
+    tokenId: "MR1",
+    patientName: "John Doe",
+    date: "2025-02-14",
+    treatment: "Paracetamol 500mg",
+    doctorName: "Dr. Smith",
+    status: "PENDING",
+  },
+  {
+    tokenId: "MR2",
+    patientName: "Jane Smith",
+    date: "2025-02-14",
+    treatment: "Ibuprofen 400mg",
+    doctorName: "Dr. Johnson",
+    status: "COMPLETED",
+  },
+];
+
+export const MedicineRequestPage = () => {
   const navigate = useNavigate();
 
   const tableData = {
@@ -63,12 +81,13 @@ const Prescriptions = () => {
     <div>
       <Header listTitle="Prescription List" hideHeader />
 
-      <div className="my-5">
-        <HeaderBar
-          button="Add Prescription"
-          date
-          navigateTo="../add-prescription"
-        />
+      <div className="my-5 flex justify-between items-center bg-white p-4 rounded-lg shadow-sm">
+        <h2 className="text-lg font-semibold">Medicine Requests</h2>
+        <button
+          className="btn btn-primary"
+          onClick={() => navigate("../add-prescription")}>
+          Add Prescription
+        </button>
       </div>
 
       <MasterTable
@@ -86,4 +105,4 @@ const Prescriptions = () => {
   );
 };
 
-export default Prescriptions;
+export default MedicineRequestPage;

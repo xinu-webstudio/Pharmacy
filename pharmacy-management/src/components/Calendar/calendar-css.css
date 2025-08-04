@@ -1,0 +1,113 @@
+/* Custom calendar styles */
+.rbc-calendar {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.rbc-header {
+  padding: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4b5563;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-month-view {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rbc-month-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-date-cell {
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.rbc-day-bg {
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-off-range-bg {
+  background-color: #f9fafb;
+}
+
+.rbc-off-range {
+  color: #9ca3af;
+}
+
+.rbc-row-segment {
+  padding: 0 4px;
+}
+
+.rbc-event {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rbc-event-content {
+  width: 100%;
+}
+
+.rbc-row-content {
+  z-index: 0;
+}
+
+.rbc-date-cell > a {
+  font-size: 16px;
+  font-weight: 500;
+  color: inherit;
+  width: 100%;
+  display: block;
+}
+
+.rbc-toolbar {
+  margin-bottom: 20px;
+}
+
+.rbc-toolbar button {
+  color: #14b8a6;
+  border: 1px solid #14b8a6;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #14b8a6;
+  color: white;
+}
+
+.rbc-toolbar-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #14b8a6;
+}
+
+/* Hide default toolbar */
+.rbc-toolbar {
+  display: none;
+}
+
+/* Custom day cell styles */
+.rbc-date-cell {
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+/* Adjust event container padding */
+.rbc-row-segment {
+  padding: 0 8px 8px 8px;
+}
+
+/* Ensure events don't overflow */
+.rbc-event-content {
+  overflow: visible;
+  white-space: normal;
+}
+

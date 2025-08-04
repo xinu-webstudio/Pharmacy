@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Header, Status } from "./src/components";
-import { SampleTableData } from "./src/components/SampleData";
-import MasterTable from "./src/layouts/Table/MasterTable";
-import HeaderBar from "./page/Events/components/HeaderBar";
-import { FrontendRoutes } from "./src/routes";
+import Header from "../../components/Header";
+import { SampleTableData } from "../../components/SampleData";
+import { Status } from "../../components/Status";
+import MasterTable from "../../layouts/Table/MasterTable";
+import HeaderBar from "../Events/components/HeaderBar";
+import { FrontendRoutes } from "../../routes";
 import { Icon } from "@iconify/react";
 
 const Prescriptions = () => {
@@ -45,7 +46,7 @@ const Prescriptions = () => {
         action: (
           <button
             className=" py-2 px-4 rounded flex items-center justify-self-center gap-2 text-[#0D0D0D] "
-            onClick={() => navigate(FrontendRoutes.ENT)}>
+            onClick={() => navigate(FrontendRoutes.PRESCRIPTIONS)}>
             <span>
               <Icon icon="simple-line-icons:note" width={20} height={20} />
             </span>

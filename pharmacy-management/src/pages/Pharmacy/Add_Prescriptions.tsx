@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-import { Formik, Form, FormikProvider, useFormik } from "formik";
-import { Header, InputField, DropdownField, Steper } from "./src/components";
+import { Form, FormikProvider, useFormik } from "formik";
+import Header from "../../components/Header";
+import { Steper } from "../../components/Stepper";
+import { DropdownField, InputField } from "../../components";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { useState } from "react";
+
 const validationSchema = {};
 
 const Add_Prescriptions = () => {
@@ -156,7 +160,8 @@ const Add_Prescriptions = () => {
                       className="bg-[#146C71] rounded-md gap-2 py-2 px-3 flex items-center font-semibold text-white"
                       onClick={() => {
                         setAddMedicine(false);
-                      }}>
+                      }}
+                    >
                       <Icon
                         icon="gridicons:add"
                         height={20}
@@ -170,7 +175,8 @@ const Add_Prescriptions = () => {
                       className="bg-[#146C71] rounded-md gap-2 py-2 px-3 flex items-center font-semibold text-white"
                       onClick={() => {
                         setAddMedicine(true);
-                      }}>
+                      }}
+                    >
                       <Icon
                         icon="gridicons:add"
                         height={20}
@@ -227,12 +233,14 @@ const Add_Prescriptions = () => {
               <div className="flex justify-end gap-3 mb-5">
                 <button
                   type="button"
-                  className="font-medium text-white rounded-md px-5 py-1 bg-[#989898] ">
+                  className="font-medium text-white rounded-md px-5 py-1 bg-[#989898] "
+                >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="font-medium text-white rounded-md py-1 px-5 bg-[#146C71] ">
+                  className="font-medium text-white rounded-md py-1 px-5 bg-[#146C71] "
+                >
                   Submit
                 </button>
               </div>

@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { Formik, Form, FormikProvider, useFormik } from "formik";
-import { Header, InputField, DropdownField, Steper } from "./src/components";
+import { Form, FormikProvider, useFormik } from "formik";
+import Header from "../src/components/Header";
+import { DropdownField, InputField, Steper } from "../src/components";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { useState } from "react";
+
 const validationSchema = {};
 
-const Add_Prescriptions = () => {
+export const PosPage = () => {
   const [addMedicine, setAddMedicine] = useState<boolean>(false);
 
   const handleSubmit = () => {
@@ -244,4 +247,4 @@ const Add_Prescriptions = () => {
   );
 };
 
-export default Add_Prescriptions;
+export default PosPage;

@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose';
+import { model, Schema } from "mongoose";
 import {
   IMedicalProductInventory,
   ISaleAndPurchase,
@@ -10,9 +10,9 @@ import {
   IMEDICALPRODUCTS,
   IMedicalSupplies,
   IOther,
-} from '../types/medicalProductInventory.types';
-import pharmacyConstants from '../constants';
-import mainConstants from '../../api/constants';
+} from "../types/medicalProductInventory.types";
+import pharmacyConstants from "../constants";
+import mainConstants from "../src/api/constants";
 
 const drugSchema = new Schema<IDrug>(
   {
@@ -27,13 +27,13 @@ const drugSchema = new Schema<IDrug>(
     form: {
       type: String,
       enum: pharmacyConstants.ENUMS.FORMENUM,
-      default: 'TABLET',
+      default: "TABLET",
       required: false,
     },
     route: {
       type: String,
       enum: mainConstants.ROUTEENUM,
-      default: 'ORAL',
+      default: "ORAL",
       required: false,
     },
     useCase: { type: String, required: false },
@@ -54,7 +54,7 @@ const medicalSuppliesSchema = new Schema<IMedicalSupplies>(
     packaging: {
       type: String,
       enum: mainConstants.PACKAGINGENUM,
-      default: 'BOX',
+      default: "BOX",
       required: false,
     },
   },
@@ -71,7 +71,7 @@ const deviceSchema = new Schema<IDeviceSchema>(
     packaging: {
       type: String,
       enum: mainConstants.PACKAGINGENUM,
-      default: 'BOX',
+      default: "BOX",
       required: false,
     },
     instructions: { type: String, required: false },
@@ -87,7 +87,7 @@ const beautyAndSkinCareSchema = new Schema<IBeautyAndSkinCare>(
     category: {
       type: String,
       enum: mainConstants.SKINCARECATEGORYENUM,
-      default: 'CLEANSER',
+      default: "CLEANSER",
       required: false,
     },
     skinType: { type: String, required: false },
@@ -95,7 +95,7 @@ const beautyAndSkinCareSchema = new Schema<IBeautyAndSkinCare>(
     packaging: {
       type: String,
       enum: mainConstants.PACKAGINGENUM,
-      default: 'BOX',
+      default: "BOX",
       required: false,
     },
     instructions: { type: String, required: false },
@@ -112,7 +112,7 @@ const labtestEquipmentSchema = new Schema<ILabtestEqipments>(
     category: {
       type: String,
       enum: mainConstants.LABTESTCATEGORYENUM,
-      default: 'ANALYSER',
+      default: "ANALYSER",
       required: false,
     },
     manufacturer: { type: String, required: false },
@@ -130,7 +130,7 @@ const labtestEquipmentSchema = new Schema<ILabtestEqipments>(
     packaging: {
       type: String,
       enum: mainConstants.PACKAGINGENUM,
-      default: 'BOX',
+      default: "BOX",
       required: false,
     },
     instructions: { type: String, required: false },
@@ -147,7 +147,7 @@ const medicalProductsSchema = new Schema<IMEDICALPRODUCTS>(
     productCategory: {
       type: String,
       enum: pharmacyConstants.ENUMS.INVENTORY_CATEGORY,
-      default: 'DRUG',
+      default: "DRUG",
       required: false,
     },
     brand: [
@@ -216,7 +216,7 @@ const medicalProductInventorySchema = new Schema<IMedicalProductInventory>(
     status: {
       type: String,
       enum: pharmacyConstants.ENUMS.PRODUCT_STATUS,
-      default: 'ACTIVE',
+      default: "ACTIVE",
       required: false,
     },
     category: {
@@ -264,7 +264,7 @@ const saleAndPurchaseSchema = new Schema<ISaleAndPurchase>(
     category: {
       type: String,
       enum: pharmacyConstants.ENUMS.TRANSACTION_TYPE,
-      default: 'SALE',
+      default: "SALE",
       required: false,
     },
     productList: [productSchema],
@@ -276,13 +276,13 @@ const saleAndPurchaseSchema = new Schema<ISaleAndPurchase>(
     paymentMethod: {
       type: String,
       enum: pharmacyConstants.ENUMS.PAYMENTMETHOD,
-      default: 'CASH',
+      default: "CASH",
       required: false,
     },
     paymentStatus: {
       type: String,
       enum: pharmacyConstants.ENUMS.PAYMENTSTATUS,
-      default: 'PENDING',
+      default: "PENDING",
       required: false,
     },
     bank: {
@@ -317,20 +317,3 @@ export {
   MedicalProductInventoryModel,
   SalesAndPurchaseModel,
 };
-    brandName: { type: String, required: false },
-    equipmentName: { type: String, required: false },
-    equipmentCode: { type: String, required: false },
-    manufacturer: { type: String, required: false },
-    model: { type: String, required: false },
-    serialNumber: { type: String, required: false },
-    remarks: { type: String, required: false },
-    packaging: {
-      type: String,
-      enum: mainConstants.PACKAGINGENUM,
-      default: 'BOX',
-      required: false,
-    },
-    instructions: { type: String, required: false },
-  },
-  { _id: false }
-);
