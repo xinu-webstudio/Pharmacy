@@ -1,9 +1,9 @@
-import { Routes, Route } from 'react-router-dom'
-import { Suspense } from 'react'
+import { Routes, Route } from 'react-router-dom';
+import { Suspense } from 'react';
 
 // Import pharmacy pages
 import {
-  PosPage,
+  PharmacyPosPage,
   MedicineRequestPage,
   MedicineRequestDetailsPage,
   PharmacyInventoryPage,
@@ -11,14 +11,14 @@ import {
   PharmacyExpense,
   PharmacyFinanceReportsPage,
   SalesPage,
-} from '../index'
+} from './page/index';
 
 // Loading component
 const Loading = () => (
   <div className="flex items-center justify-center min-h-screen">
     <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
   </div>
-)
+);
 
 // Home page component
 const HomePage = () => (
@@ -37,7 +37,7 @@ const HomePage = () => (
             Go to POS
           </a>
         </div>
-        
+
         <div className="card p-6">
           <h2 className="text-xl font-semibold mb-4">Inventory Management</h2>
           <p className="text-grey-600 mb-4">
@@ -47,7 +47,7 @@ const HomePage = () => (
             View Inventory
           </a>
         </div>
-        
+
         <div className="card p-6">
           <h2 className="text-xl font-semibold mb-4">Medicine Requests</h2>
           <p className="text-grey-600 mb-4">
@@ -57,7 +57,7 @@ const HomePage = () => (
             View Requests
           </a>
         </div>
-        
+
         <div className="card p-6">
           <h2 className="text-xl font-semibold mb-4">Financial Reports</h2>
           <p className="text-grey-600 mb-4">
@@ -67,7 +67,7 @@ const HomePage = () => (
             View Reports
           </a>
         </div>
-        
+
         <div className="card p-6">
           <h2 className="text-xl font-semibold mb-4">Product Management</h2>
           <p className="text-grey-600 mb-4">
@@ -77,7 +77,7 @@ const HomePage = () => (
             Manage Products
           </a>
         </div>
-        
+
         <div className="card p-6">
           <h2 className="text-xl font-semibold mb-4">Expenses</h2>
           <p className="text-grey-600 mb-4">
@@ -90,7 +90,7 @@ const HomePage = () => (
       </div>
     </div>
   </div>
-)
+);
 
 function App() {
   return (
@@ -98,27 +98,38 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/pos" element={<PosPage />} />
+          <Route path="/pos" element={<PharmacyPosPage />} />
           <Route path="/medicine-requests" element={<MedicineRequestPage />} />
-          <Route path="/medicine-requests/:id" element={<MedicineRequestDetailsPage />} />
+          <Route
+            path="/medicine-requests/:id"
+            element={<MedicineRequestDetailsPage />}
+          />
           <Route path="/inventory" element={<PharmacyInventoryPage />} />
           <Route path="/products" element={<PharmacyProductListPage />} />
           <Route path="/finance/expenses" element={<PharmacyExpense />} />
-          <Route path="/finance/reports" element={<PharmacyFinanceReportsPage />} />
+          <Route
+            path="/finance/reports"
+            element={<PharmacyFinanceReportsPage />}
+          />
           <Route path="/finance/sales" element={<SalesPage />} />
-          <Route path="*" element={
-            <div className="min-h-screen flex items-center justify-center">
-              <div className="text-center">
-                <h1 className="text-4xl font-bold text-grey-900 mb-4">404</h1>
-                <p className="text-grey-600 mb-4">Page not found</p>
-                <a href="/" className="btn btn-primary">Go Home</a>
+          <Route
+            path="*"
+            element={
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center">
+                  <h1 className="text-4xl font-bold text-grey-900 mb-4">404</h1>
+                  <p className="text-grey-600 mb-4">Page not found</p>
+                  <a href="/" className="btn btn-primary">
+                    Go Home
+                  </a>
+                </div>
               </div>
-            </div>
-          } />
+            }
+          />
         </Routes>
       </Suspense>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
